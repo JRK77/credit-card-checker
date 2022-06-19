@@ -30,10 +30,10 @@ let vNewArr = [];
 
 // Luhn algorithm
 const validateCred = arr => {
-  /* remove last element from array (without changing original array), and reverse */
+  // remove last element from array (without changing original array), and reverse
   newArr = arr.slice(0, -1).reverse();
   
-  // attempt at multiplying digits in odd positions by 2
+  // multiply digits in odd positions by 2
   for (i = 0; i < newArr.length; i++) {
     if (i % 2 === 0) {
       vNewArr.push(newArr[i]);
