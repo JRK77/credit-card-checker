@@ -29,7 +29,17 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 const validateCred = arr => {
     /* remove last element from array (without changing original array), and reverse */
     newArr = arr.slice(0, -1).reverse();
+    // create an empty array for use later
+    let vNewArr = [];
     // multiply digits in odd positions by 2
+
+    for (i = 0; i < newArr.length; i++) {
+        if (i % 2 !== 0) {
+          vNewArr.unshift(newArr[i] * 2);
+        } else {
+          vNewArr.unshift(newArr[i]);
+        }
+      }
     
     return newArr;
   }
