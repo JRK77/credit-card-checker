@@ -36,14 +36,14 @@ const validateCred = arr => {
   // multiply digits in odd positions by 2, subtracting 9 if > 9
   for (i = 0; i < newArr.length; i++) {
     if (i % 2 === 0) {
-      vNewArr.push(newArr[i]);
-    } else {
       times_2 = newArr[i] * 2;
       if (times_2 > 9) {
         vNewArr.push(times_2 - 9);
       } else {
         vNewArr.push(times_2);
       }
+    } else {
+      vNewArr.push(newArr[i]);
     }
   }
 
