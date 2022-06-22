@@ -58,5 +58,42 @@ const validateCred = arr => {
   } else {
     return "Invalid number";
   } 
-
 }
+
+
+// another array for use below
+let invalid_arr = [];
+
+// check if elements of an array are valid credit card numbers
+const findInvalidCards = cardArray => {
+  for (let i = 0; i < cardArray.length; i++) {
+    if (validateCred(cardArray[i]) === "Invalid number") {
+      invalid_arr.push(cardArray[i]);
+    }
+  }
+  return invalid_arr;
+}
+
+// array to contain the list of companies that are issuing invalid credit card numbers
+let companies = [];
+
+// function to identify companies
+const idInvalidCardCompanies = invalid_arr => {
+  for (i = 0; i < invalid_arr.length; i++) {
+    if (invalid_arr[i][0] === 3) {
+      companies.push("American Express");
+    } else if (invalid_arr[i][0] === 4) {
+      companies.push("Visa");
+    } else if (invalid_arr[i][0] === 5) {
+      companies.push("Mastercard");
+    } else if (invalid_arr[i][0] === 6) {
+      companies.push("Discovery");
+    } else {
+      companies.push("Company not found");
+    }
+  }
+  return companies;
+}
+
+
+console.log(idInvalidCardCompanies(batch));
